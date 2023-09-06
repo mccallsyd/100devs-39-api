@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const PORT = 8000
 
-const rappers = {
-	'21 savage': {
+const decor = {
+	'organic modern': {
 		'age': 29,
 		'birthName': 'Shéyaa Bin Abraham-Joseph',
 		'birthLocation': 'London, England'
@@ -25,11 +25,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/:name', (req, res) => {
-	const rapperName = req.params.name.toLowerCase()
-	if(rappers[rapperName]){
-		res.json(rappers[rapperName])
+	const decorStyle = req.params.name.toLowerCase()
+	if(decor[decorStyle]){
+		res.json(decor[decorStyle])
 	}else{
-		res.json(rappers['unknown'])
+		res.json(decor['unknown'])
 	}
 	
 })
